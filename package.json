@@ -1,0 +1,39 @@
+{
+  "name": "@du/services",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "push": "drizzle-kit push",
+    "postgres": "docker run --rm -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=du postgres:latest",
+    "start-services": "docker-compose -f docker-compose.test.yml up -d",
+    "stop-services": "docker-compose -f docker-compose.test.yml down"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.5",
+    "@types/node": "^20.14.6",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "drizzle-kit": "^0.22.4",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.1",
+    "drizzle-zod": "^0.5.1",
+    "lodash": "^4.17.21",
+    "postgres": "^3.4.4",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.0"
+  }
+}
